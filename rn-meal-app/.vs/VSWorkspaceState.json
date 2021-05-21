@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\components",
+    "\\constants",
+    "\\data",
+    "\\models",
+    "\\navigation",
+    "\\screens",
+    "\\store",
+    "\\store\\actions",
+    "\\store\\reducers"
+  ],
+  "SelectedNode": "\\navigation\\MealsNavigator.js",
+  "PreviewInSolutionExplorer": false
+}

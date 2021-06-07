@@ -70,5 +70,24 @@ export const addOrder = (cartItems, totalAmount) => {
         date: date,
       },
     });
+
+    //Better to do the below logic in the server side.
+    for(const cartItem of cartItems){
+      const pushToken = cartItem.productPushToken;
+
+      fetch('https://exp.host/--/api/v2/push/send', {
+        method:"POST",
+        headers:{
+          'Accept':'application/json',
+          'Accept-Encoding':'gzip, deflate',
+          'Content-Type':'application/json'
+        },
+        body:JSON.stringify({
+          to:pushToken,
+          title: 'Order was placed!',
+          body:cartItem.productTitle
+        })
+      })
+    }
   };
 };

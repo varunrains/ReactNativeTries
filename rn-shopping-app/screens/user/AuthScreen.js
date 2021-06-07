@@ -63,7 +63,7 @@ const AuthScreen = props => {
         try {
 
             await dispatch(action);
-            props.navigation.navigate('Shop');
+            //props.navigation.navigate('Shop');
         } catch (err) {
             setError(err.message);
             //When we navigate away then no need to set the flag
@@ -136,7 +136,7 @@ const AuthScreen = props => {
     </KeyboardAvoidingView>);
 };
 
-AuthScreen.navigationOptions = {
+export const screenOptions = {
     headerTitle :"Authenticate"
 }
 

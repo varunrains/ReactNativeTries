@@ -14,6 +14,7 @@ switch(action.type){
         const addedProduct = action.product;
         const prodPrice = addedProduct.price;
         const prodTitle = addedProduct.title;
+        const pushToken = addedProduct.pushToken;
 //console.log("added product" + prodTitle +"--" +addedProduct.title);
         let updatedOrNewCartItem;
     
@@ -23,11 +24,12 @@ switch(action.type){
                 state.items[addedProduct.id].quantity + 1,
                 prodPrice,
                 prodTitle,
-                state.items[addedProduct.id].sum + prodPrice
+                state.items[addedProduct.id].sum + prodPrice,
+                pushToken
             );
            
         }else{
-            updatedOrNewCartItem = new CartItem(1, prodPrice, prodTitle, prodPrice);
+            updatedOrNewCartItem = new CartItem(1, prodPrice, prodTitle, pushToken,prodPrice);
         }
         return {
             ...state,

@@ -61,7 +61,7 @@ return(<FlatList
 />);
 };
 
-UserProductsScreen.navigationOptions = navData => {
+export const screenOptions = navData => {
    return {
         headerTitle:'Your products',
         headerLeft:() => {

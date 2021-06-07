@@ -21,7 +21,8 @@ const cartItems = useSelector(state => {
             productTitle: state.cart.items[key].title,
             productPrice: state.cart.items[key].productPrice,
             quantity:state.cart.items[key].quantity,
-            sum:state.cart.items[key].sum
+            sum:state.cart.items[key].sum,
+            productPushToken: state.cart.items[key].pushToken
         })
     }
     return transformedCartItems.sort((a,b)=> a.productId > b.productId ? 1 : -1);
@@ -63,7 +64,7 @@ dispatch(cartActions.removeFromCart(itemData.item.productId));
 </View>);
 };
 
-CartScreen.navigationOptions = {
+export const screenOptions = {
     headerTitle:'Your Orders'
     };
 

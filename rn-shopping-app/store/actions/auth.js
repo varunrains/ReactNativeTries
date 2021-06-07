@@ -4,12 +4,19 @@ export const SIGNUP = "SIGNUP";
 export const LOGIN = "LOGIN";
 export const LOGOUT = "LOGOUT";
 export const AUTHENTICATE = "AUTHENTICATE";
+export const SET_DID_TRY_AL = "SET_DID_TRY_AL"
 
 let timer;
 export const authenticate = (userId, token, expiryTime) => {
   return (dispatch) => {
     dispatch(setLogoutTimer(expiryTime));
     dispatch({ type: AUTHENTICATE, userId: userId, token: token });
+  };
+};
+
+export const setDidTryAL = () =>{
+  return {
+    type: SET_DID_TRY_AL
   };
 };
 
